@@ -5,12 +5,12 @@ import "../../styles/Business/AddFoodListing.css";
 
 const AddFoodListing = () => {
   const navigate = useNavigate();
+
   const storedUser = localStorage.getItem("foodSaveUser");
   const user = storedUser ? JSON.parse(storedUser) : null;
-  const businessName = user?.name?.trim() || "";
 
   const [formData, setFormData] = useState({
-    businessName,
+    businessName: "",
     foodName: "",
     category: "",
     description: "",
@@ -37,8 +37,12 @@ const AddFoodListing = () => {
   };
 
   const validateForm = () => {
-    if (!businessName || !user?._id) {
+    if (!user?._id) {
       return "Please log in with a business account before adding food.";
+    }
+
+    if (!formData.businessName.trim()) {
+      return "Please enter the business name.";
     }
 
     if (!formData.foodName.trim()) {
@@ -95,7 +99,7 @@ const AddFoodListing = () => {
 
       const data = {
         businessId: user._id,
-        businessName,
+        businessName: formData.businessName.trim(),
         foodName: formData.foodName.trim(),
         category: formData.category,
         description: formData.description.trim(),
@@ -110,7 +114,7 @@ const AddFoodListing = () => {
       setSuccess("Food listing added successfully!");
 
       setFormData({
-        businessName,
+        businessName: "",
         foodName: "",
         category: "",
         description: "",
@@ -176,7 +180,7 @@ const AddFoodListing = () => {
               type="text"
               placeholder="e.g. Fresh Bite Bakery"
               value={formData.businessName}
-              readOnly
+              onChange={handleChange}
             />
           </div>
 
@@ -370,7 +374,6 @@ const AddFoodListing = () => {
           </div>
 
         </form>
-
       </section>
     </main>
   );
