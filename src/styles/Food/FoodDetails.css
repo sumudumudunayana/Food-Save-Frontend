@@ -1,0 +1,266 @@
+.food-details-page {
+  min-height: calc(100vh - 80px);
+  padding: 50px 20px;
+  background: #f8faf8;
+}
+
+.food-details-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.back-food-btn {
+  border: none;
+  background: transparent;
+  color: #2f7d32;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding: 5px 0;
+}
+
+.food-details-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.food-details-image {
+  min-height: 550px;
+  background: #eef6ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.food-details-image > span {
+  font-size: 120px;
+}
+
+.food-details-status {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: #2f7d32;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.food-details-content {
+  padding: 45px;
+}
+
+.food-details-category {
+  color: #2f7d32;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.food-details-content h1 {
+  margin: 10px 0 15px;
+  font-size: 40px;
+  color: #1f2937;
+}
+
+.food-details-description {
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.food-business {
+  padding: 16px;
+  background: #f8faf8;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.food-business span {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 5px;
+}
+
+.food-business strong {
+  color: #1f2937;
+}
+
+.food-details-info {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-item span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.detail-item strong {
+  color: #1f2937;
+  text-align: right;
+}
+
+.request-section {
+  padding-top: 25px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.request-section h2 {
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-size: 24px;
+}
+
+.request-section > p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.request-form-group {
+  margin-bottom: 18px;
+}
+
+.request-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.request-form-group input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.request-form-group input:focus {
+  border-color: #2f7d32;
+}
+
+.request-food-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2f7d32;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.request-food-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.request-message {
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.request-message.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.request-message.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.unavailable-message {
+  padding: 15px;
+  background: #fef3c7;
+  color: #92400e;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.food-details-message {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.food-details-message.error {
+  color: #b91c1c;
+}
+
+.food-details-message button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2f7d32;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .food-details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .food-details-image {
+    min-height: 300px;
+  }
+
+  .food-details-image > span {
+    font-size: 90px;
+  }
+
+  .food-details-content {
+    padding: 30px 25px;
+  }
+
+  .food-details-content h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .food-details-page {
+    padding: 30px 15px;
+  }
+
+  .food-details-content {
+    padding: 25px 20px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .detail-item strong {
+    text-align: left;
+  }
+}

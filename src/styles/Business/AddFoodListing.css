@@ -1,0 +1,165 @@
+.add-food-page {
+  min-height: calc(100vh - 80px);
+  padding: 60px 20px;
+  background: #f8faf8;
+}
+
+.add-food-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.add-food-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.add-food-header span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #2f7d32;
+}
+
+.add-food-header h1 {
+  margin: 10px 0;
+  font-size: 40px;
+  color: #1f2937;
+}
+
+.add-food-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.add-food-form {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #1f2937;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2f7d32;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group small {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-message {
+  padding: 13px 15px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  font-size: 14px;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.success-message {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 13px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+}
+
+.cancel-btn {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.submit-btn {
+  background: #2f7d32;
+  color: white;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .add-food-page {
+    padding: 35px 15px;
+  }
+
+  .add-food-header h1 {
+    font-size: 30px;
+  }
+
+  .add-food-form {
+    padding: 25px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+  }
+}
