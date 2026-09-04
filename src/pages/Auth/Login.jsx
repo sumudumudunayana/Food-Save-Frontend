@@ -50,17 +50,12 @@ const Login = () => {
 
       const user = response.data.user;
 
+      // Store logged-in user information
       localStorage.setItem("foodSaveUser", JSON.stringify(user));
 
-      if (user.role === "business") {
-        navigate("/business/requests");
-      } else if (user.role === "recipient") {
-        navigate("/food");
-      } else if (user.role === "admin") {
-        navigate("/admin/dashboard");
-      } else {
-        navigate("/");
-      }
+      // Redirect all users to Home
+      navigate("/home");
+
     } catch (error) {
       console.error(error);
 
@@ -79,6 +74,7 @@ const Login = () => {
 
         {/* LEFT SIDE */}
         <div className="login-intro">
+
           <div className="login-bg-circle circle-one"></div>
           <div className="login-bg-circle circle-two"></div>
 
@@ -86,68 +82,113 @@ const Login = () => {
 
             {/* Brand */}
             <div className="login-brand">
-              <div className="login-logo">🍃</div>
+
+              <div className="login-logo">
+                🍃
+              </div>
 
               <div>
-                <span className="brand-small">WELCOME TO</span>
-                <h1>FoodSave</h1>
+                <span className="brand-small">
+                  WELCOME TO
+                </span>
+
+                <h1>
+                  FoodSave
+                </h1>
               </div>
+
             </div>
 
             {/* Main Heading */}
             <div className="intro-heading">
-              <span className="intro-label">MAKE AN IMPACT</span>
+
+              <span className="intro-label">
+                MAKE AN IMPACT
+              </span>
 
               <h2>
                 Save food.
                 <br />
-                <span>Share kindness.</span>
+                <span>
+                  Share kindness.
+                </span>
               </h2>
 
               <p>
                 Connect surplus food with people who need it and help
                 create a more sustainable Sri Lanka, one meal at a time.
               </p>
+
             </div>
 
             {/* Benefits */}
             <div className="login-benefits">
 
               <div className="benefit-item">
-                <div className="benefit-icon">✓</div>
+
+                <div className="benefit-icon">
+                  ✓
+                </div>
 
                 <div>
-                  <strong>Discover surplus food</strong>
-                  <p>Find available food from local businesses.</p>
+                  <strong>
+                    Discover surplus food
+                  </strong>
+
+                  <p>
+                    Find available food from local businesses.
+                  </p>
                 </div>
+
               </div>
 
               <div className="benefit-item">
-                <div className="benefit-icon">✓</div>
+
+                <div className="benefit-icon">
+                  ✓
+                </div>
 
                 <div>
-                  <strong>Request what you need</strong>
-                  <p>Connect with businesses and request food.</p>
+                  <strong>
+                    Request what you need
+                  </strong>
+
+                  <p>
+                    Connect with businesses and request food.
+                  </p>
                 </div>
+
               </div>
 
               <div className="benefit-item">
-                <div className="benefit-icon">✓</div>
+
+                <div className="benefit-icon">
+                  ✓
+                </div>
 
                 <div>
-                  <strong>Reduce food waste</strong>
-                  <p>Turn surplus food into meaningful support.</p>
+                  <strong>
+                    Reduce food waste
+                  </strong>
+
+                  <p>
+                    Turn surplus food into meaningful support.
+                  </p>
                 </div>
+
               </div>
 
             </div>
 
             {/* Impact */}
             <div className="login-impact">
+
               <span className="impact-dot"></span>
+
               <span>
                 Building a more sustainable future together
               </span>
+
             </div>
 
           </div>
@@ -160,19 +201,32 @@ const Login = () => {
 
             {/* Mobile Brand */}
             <div className="mobile-brand">
-              <div className="mobile-logo">🍃</div>
-              <span>FoodSave</span>
+
+              <div className="mobile-logo">
+                🍃
+              </div>
+
+              <span>
+                FoodSave
+              </span>
+
             </div>
 
             {/* Header */}
             <div className="login-header">
-              <span className="form-label">WELCOME BACK</span>
 
-              <h2>Sign in to your account</h2>
+              <span className="form-label">
+                WELCOME BACK
+              </span>
+
+              <h2>
+                Sign in to your account
+              </h2>
 
               <p>
                 Enter your details below to continue.
               </p>
+
             </div>
 
             <form onSubmit={handleSubmit}>
@@ -180,19 +234,30 @@ const Login = () => {
               {/* Error */}
               {error && (
                 <div className="login-error">
-                  <span className="error-icon">!</span>
-                  <span>{error}</span>
+
+                  <span className="error-icon">
+                    !
+                  </span>
+
+                  <span>
+                    {error}
+                  </span>
+
                 </div>
               )}
 
               {/* Email */}
               <div className="login-form-group">
+
                 <label htmlFor="email">
                   Email Address
                 </label>
 
                 <div className="input-wrapper">
-                  <span className="input-icon">✉</span>
+
+                  <span className="input-icon">
+                    ✉
+                  </span>
 
                   <input
                     id="email"
@@ -203,17 +268,23 @@ const Login = () => {
                     onChange={handleChange}
                     autoComplete="email"
                   />
+
                 </div>
+
               </div>
 
               {/* Password */}
               <div className="login-form-group">
+
                 <label htmlFor="password">
                   Password
                 </label>
 
                 <div className="input-wrapper">
-                  <span className="input-icon">🔒</span>
+
+                  <span className="input-icon">
+                    🔒
+                  </span>
 
                   <input
                     id="password"
@@ -224,7 +295,9 @@ const Login = () => {
                     onChange={handleChange}
                     autoComplete="current-password"
                   />
+
                 </div>
+
               </div>
 
               {/* Submit Button */}
@@ -233,6 +306,7 @@ const Login = () => {
                 className="login-submit-btn"
                 disabled={loading}
               >
+
                 {loading ? (
                   <>
                     <span className="login-spinner"></span>
@@ -241,27 +315,40 @@ const Login = () => {
                 ) : (
                   <>
                     Sign In
-                    <span className="button-arrow">→</span>
+                    <span className="button-arrow">
+                      →
+                    </span>
                   </>
                 )}
+
               </button>
 
             </form>
 
             {/* Register */}
             <div className="login-register">
+
               <p>
                 Don't have an account?
+
                 <Link to="/register">
                   Create an account
                 </Link>
               </p>
+
             </div>
 
             {/* Footer */}
             <div className="login-footer">
-              <span>🌱</span>
-              <p>Every saved meal makes a difference.</p>
+
+              <span>
+                🌱
+              </span>
+
+              <p>
+                Every saved meal makes a difference.
+              </p>
+
             </div>
 
           </div>
