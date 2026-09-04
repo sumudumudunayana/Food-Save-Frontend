@@ -1,3 +1,7 @@
+/* ================================
+   NAVBAR
+================================ */
+
 .navbar {
   width: 100%;
   background: #ffffff;
@@ -17,16 +21,21 @@
   justify-content: space-between;
 }
 
-/* Logo */
+/* ================================
+   LOGO
+================================ */
 
 .navbar-logo {
   font-size: 26px;
   font-weight: 700;
   color: #166534;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-/* Navigation Links */
+/* ================================
+   DESKTOP NAVIGATION
+================================ */
 
 .navbar-links {
   display: flex;
@@ -38,6 +47,7 @@
   color: #374151;
   font-size: 15px;
   font-weight: 500;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -45,7 +55,9 @@
   color: #166534;
 }
 
-/* Right Side */
+/* ================================
+   RIGHT SIDE
+================================ */
 
 .navbar-actions {
   display: flex;
@@ -53,19 +65,24 @@
   gap: 12px;
 }
 
-/* Login */
+/* ================================
+   LOGIN
+================================ */
 
 .login-btn {
   padding: 9px 18px;
   color: #166534;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .login-btn:hover {
   color: #14532d;
 }
 
-/* Register */
+/* ================================
+   REGISTER
+================================ */
 
 .register-btn {
   padding: 10px 18px;
@@ -73,6 +90,7 @@
   color: white;
   border-radius: 8px;
   font-weight: 600;
+  text-decoration: none;
   transition: background 0.2s ease;
 }
 
@@ -80,7 +98,9 @@
   background: #14532d;
 }
 
-/* Logged-in User */
+/* ================================
+   LOGGED-IN USER
+================================ */
 
 .navbar-user {
   color: #374151;
@@ -89,7 +109,9 @@
   white-space: nowrap;
 }
 
-/* Logout */
+/* ================================
+   LOGOUT
+================================ */
 
 .logout-btn {
   padding: 9px 17px;
@@ -97,8 +119,12 @@
   color: #166534;
   border: 1px solid #166534;
   border-radius: 8px;
+
   font-size: 14px;
   font-weight: 600;
+
+  cursor: pointer;
+
   transition: all 0.2s ease;
 }
 
@@ -107,35 +133,252 @@
   color: #ffffff;
 }
 
-/* Mobile */
+/* ================================
+   MOBILE MENU BUTTON
+================================ */
+
+.mobile-menu-btn {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 8px;
+
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  border-color: #166534;
+}
+
+.mobile-menu-btn span {
+  display: block;
+
+  width: 22px;
+  height: 2px;
+
+  background: #166534;
+  border-radius: 2px;
+
+  transition: all 0.25s ease;
+}
+
+/* Hamburger animation */
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ================================
+   MOBILE MENU
+================================ */
+
+.mobile-menu {
+  display: none;
+}
+
+/* ================================
+   MOBILE
+================================ */
 
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 14px 16px;
-  }
 
-  .navbar-links {
-    display: none;
+  .navbar-container {
+    padding: 13px 16px;
   }
 
   .navbar-logo {
     font-size: 23px;
   }
 
-  .login-btn {
+  /* Hide desktop navigation */
+
+  .navbar-links {
     display: none;
   }
 
-  .register-btn {
-    padding: 9px 14px;
-  }
-
-  .navbar-user {
+  .navbar-actions {
     display: none;
   }
 
-  .logout-btn {
-    padding: 8px 13px;
-    font-size: 13px;
+  /* Show hamburger */
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  /* Mobile dropdown */
+
+  .mobile-menu {
+    display: block;
+
+    max-height: 0;
+    overflow: hidden;
+
+    background: #ffffff;
+    border-top: 1px solid transparent;
+
+    transition:
+      max-height 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    max-height: 600px;
+    border-top-color: #e5e7eb;
+  }
+
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 16px 18px;
+  }
+
+  .mobile-menu-links > a {
+    padding: 14px 8px;
+
+    color: #374151;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #f3f4f6;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .mobile-menu-links > a:hover {
+    color: #166534;
+    background: #f0fdf4;
+  }
+
+  /* ================================
+     MOBILE ACTIONS
+  ================================ */
+
+  .mobile-menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding-top: 16px;
+  }
+
+  .mobile-login-btn {
+    display: block;
+
+    padding: 12px;
+
+    text-align: center;
+
+    color: #166534 !important;
+
+    background: #ffffff;
+
+    border: 1px solid #166534;
+    border-radius: 8px;
+  }
+
+  .mobile-register-btn {
+    display: block;
+
+    padding: 12px;
+
+    text-align: center;
+
+    color: #ffffff !important;
+
+    background: #166534;
+
+    border-radius: 8px;
+  }
+
+  /* ================================
+     MOBILE USER
+  ================================ */
+
+  .mobile-user {
+    padding: 12px;
+
+    text-align: center;
+
+    color: #374151;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    background: #f0fdf4;
+
+    border-radius: 8px;
+  }
+
+  .mobile-logout-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    color: #166534;
+
+    border: 1px solid #166534;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+  }
+
+  .mobile-logout-btn:hover {
+    background: #166534;
+    color: #ffffff;
+  }
+}
+
+/* ================================
+   SMALL PHONES
+================================ */
+
+@media (max-width: 400px) {
+
+  .navbar-container {
+    padding: 12px 14px;
+  }
+
+  .navbar-logo {
+    font-size: 21px;
+  }
+
+  .mobile-menu-links > a {
+    font-size: 15px;
+    padding: 13px 8px;
   }
 }
