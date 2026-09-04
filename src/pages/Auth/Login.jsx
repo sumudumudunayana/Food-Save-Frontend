@@ -50,10 +50,8 @@ const Login = () => {
 
       const user = response.data.user;
 
-      // Store logged-in user information
       localStorage.setItem("foodSaveUser", JSON.stringify(user));
 
-      // Redirect based on role
       if (user.role === "business") {
         navigate("/business/requests");
       } else if (user.role === "recipient") {
@@ -79,58 +77,111 @@ const Login = () => {
     <main className="login-page">
       <section className="login-container">
 
-        {/* Left Side */}
+        {/* LEFT SIDE */}
         <div className="login-intro">
+          <div className="login-bg-circle circle-one"></div>
+          <div className="login-bg-circle circle-two"></div>
+
           <div className="login-intro-content">
-            <div className="login-logo">
-              🍃
+
+            {/* Brand */}
+            <div className="login-brand">
+              <div className="login-logo">🍃</div>
+
+              <div>
+                <span className="brand-small">WELCOME TO</span>
+                <h1>FoodSave</h1>
+              </div>
             </div>
 
-            <h1>FoodSave</h1>
+            {/* Main Heading */}
+            <div className="intro-heading">
+              <span className="intro-label">MAKE AN IMPACT</span>
 
-            <h2>Save Food. Make a Difference.</h2>
+              <h2>
+                Save food.
+                <br />
+                <span>Share kindness.</span>
+              </h2>
 
-            <p>
-              Connect with surplus food from local businesses and help
-              reduce avoidable food waste in Sri Lanka.
-            </p>
+              <p>
+                Connect surplus food with people who need it and help
+                create a more sustainable Sri Lanka, one meal at a time.
+              </p>
+            </div>
 
+            {/* Benefits */}
             <div className="login-benefits">
-              <div>
-                <span>✓</span>
-                <p>Discover surplus food</p>
+
+              <div className="benefit-item">
+                <div className="benefit-icon">✓</div>
+
+                <div>
+                  <strong>Discover surplus food</strong>
+                  <p>Find available food from local businesses.</p>
+                </div>
               </div>
 
-              <div>
-                <span>✓</span>
-                <p>Request available food</p>
+              <div className="benefit-item">
+                <div className="benefit-icon">✓</div>
+
+                <div>
+                  <strong>Request what you need</strong>
+                  <p>Connect with businesses and request food.</p>
+                </div>
               </div>
 
-              <div>
-                <span>✓</span>
-                <p>Help reduce food waste</p>
+              <div className="benefit-item">
+                <div className="benefit-icon">✓</div>
+
+                <div>
+                  <strong>Reduce food waste</strong>
+                  <p>Turn surplus food into meaningful support.</p>
+                </div>
               </div>
+
             </div>
+
+            {/* Impact */}
+            <div className="login-impact">
+              <span className="impact-dot"></span>
+              <span>
+                Building a more sustainable future together
+              </span>
+            </div>
+
           </div>
         </div>
 
-        {/* Right Side */}
+        {/* RIGHT SIDE */}
         <div className="login-form-section">
+
           <div className="login-card">
 
+            {/* Mobile Brand */}
+            <div className="mobile-brand">
+              <div className="mobile-logo">🍃</div>
+              <span>FoodSave</span>
+            </div>
+
+            {/* Header */}
             <div className="login-header">
-              <h2>Welcome Back</h2>
+              <span className="form-label">WELCOME BACK</span>
+
+              <h2>Sign in to your account</h2>
 
               <p>
-                Sign in to continue to FoodSave
+                Enter your details below to continue.
               </p>
             </div>
 
             <form onSubmit={handleSubmit}>
 
+              {/* Error */}
               {error && (
                 <div className="login-error">
-                  {error}
+                  <span className="error-icon">!</span>
+                  <span>{error}</span>
                 </div>
               )}
 
@@ -140,14 +191,19 @@ const Login = () => {
                   Email Address
                 </label>
 
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
+                <div className="input-wrapper">
+                  <span className="input-icon">✉</span>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    autoComplete="email"
+                  />
+                </div>
               </div>
 
               {/* Password */}
@@ -156,38 +212,60 @@ const Login = () => {
                   Password
                 </label>
 
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="Enter your password"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
+                <div className="input-wrapper">
+                  <span className="input-icon">🔒</span>
+
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    autoComplete="current-password"
+                  />
+                </div>
               </div>
 
-              {/* Submit */}
+              {/* Submit Button */}
               <button
                 type="submit"
                 className="login-submit-btn"
                 disabled={loading}
               >
-                {loading ? "Signing In..." : "Sign In"}
+                {loading ? (
+                  <>
+                    <span className="login-spinner"></span>
+                    Signing in...
+                  </>
+                ) : (
+                  <>
+                    Sign In
+                    <span className="button-arrow">→</span>
+                  </>
+                )}
               </button>
 
             </form>
 
+            {/* Register */}
             <div className="login-register">
               <p>
                 Don't have an account?
-                {" "}
                 <Link to="/register">
                   Create an account
                 </Link>
               </p>
             </div>
 
+            {/* Footer */}
+            <div className="login-footer">
+              <span>🌱</span>
+              <p>Every saved meal makes a difference.</p>
+            </div>
+
           </div>
+
         </div>
 
       </section>

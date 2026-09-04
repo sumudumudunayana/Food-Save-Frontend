@@ -131,214 +131,460 @@ const Register = () => {
     <main className="register-page">
       <section className="register-container">
 
-        {/* Left Side */}
+        {/* =====================================================
+            LEFT SIDE
+        ====================================================== */}
+
         <div className="register-intro">
+
+          {/* Decorative Background */}
+          <div className="register-bg-circle register-circle-one"></div>
+          <div className="register-bg-circle register-circle-two"></div>
+
           <div className="register-intro-content">
 
-            <div className="register-logo">
-              🍃
+            {/* Brand */}
+            <div className="register-brand">
+
+              <div className="register-logo">
+                🍃
+              </div>
+
+              <div>
+                <span className="register-brand-small">
+                  WELCOME TO
+                </span>
+
+                <h1>FoodSave</h1>
+              </div>
+
             </div>
 
-            <h1>FoodSave</h1>
+            {/* Heading */}
+            <div className="register-intro-heading">
 
-            <h2>Join the Movement</h2>
+              <span className="register-intro-label">
+                JOIN THE MOVEMENT
+              </span>
 
-            <p>
-              Help reduce food waste by connecting surplus food with
-              people and communities that can use it.
-            </p>
+              <h2>
+                Be part of the
+                <br />
+                <span>food-saving community.</span>
+              </h2>
 
+              <p>
+                Join FoodSave and help connect surplus food with
+                people and communities that can use it.
+              </p>
+
+            </div>
+
+            {/* Benefits */}
             <div className="register-benefits">
 
-              <div>
-                <span>✓</span>
-                <p>Businesses can share surplus food</p>
+              <div className="register-benefit-item">
+
+                <div className="register-benefit-icon">
+                  ✓
+                </div>
+
+                <div>
+                  <strong>Businesses can share surplus food</strong>
+
+                  <p>
+                    Give surplus food a meaningful destination.
+                  </p>
+                </div>
+
               </div>
 
-              <div>
-                <span>✓</span>
-                <p>Recipients can request available food</p>
+              <div className="register-benefit-item">
+
+                <div className="register-benefit-icon">
+                  ✓
+                </div>
+
+                <div>
+                  <strong>Recipients can request food</strong>
+
+                  <p>
+                    Discover and request available food.
+                  </p>
+                </div>
+
               </div>
 
-              <div>
-                <span>✓</span>
-                <p>Together we can reduce food waste</p>
+              <div className="register-benefit-item">
+
+                <div className="register-benefit-icon">
+                  ✓
+                </div>
+
+                <div>
+                  <strong>Help reduce food waste</strong>
+
+                  <p>
+                    Together, small actions create real impact.
+                  </p>
+                </div>
+
               </div>
+
+            </div>
+
+            {/* Impact */}
+            <div className="register-impact">
+
+              <span className="register-impact-dot"></span>
+
+              <span>
+                Every meal saved is a step towards a better future
+              </span>
 
             </div>
 
           </div>
         </div>
 
-        {/* Right Side */}
+        {/* =====================================================
+            RIGHT SIDE
+        ====================================================== */}
+
         <div className="register-form-section">
 
           <div className="register-card">
 
+            {/* Mobile Brand */}
+            <div className="register-mobile-brand">
+
+              <div className="register-mobile-logo">
+                🍃
+              </div>
+
+              <span>FoodSave</span>
+
+            </div>
+
+            {/* Header */}
             <div className="register-header">
-              <h2>Create Account</h2>
+
+              <span className="register-form-label">
+                GET STARTED
+              </span>
+
+              <h2>Create your account</h2>
 
               <p>
-                Join FoodSave and make a difference
+                Join FoodSave and make a difference.
               </p>
+
             </div>
 
             <form onSubmit={handleSubmit}>
 
+              {/* Error */}
               {error && (
                 <div className="register-error">
-                  {error}
+
+                  <span className="register-error-icon">
+                    !
+                  </span>
+
+                  <span>
+                    {error}
+                  </span>
+
                 </div>
               )}
 
+              {/* Success */}
               {success && (
                 <div className="register-success">
-                  {success}
+
+                  <span className="register-success-icon">
+                    ✓
+                  </span>
+
+                  <span>
+                    {success}
+                  </span>
+
                 </div>
               )}
 
-              {/* Name */}
+              {/* =================================================
+                  NAME
+              ================================================== */}
+
               <div className="register-form-group">
+
                 <label htmlFor="name">
                   Full Name
                 </label>
 
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Enter your full name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
+                <div className="register-input-wrapper">
+
+                  <span className="register-input-icon">
+                    👤
+                  </span>
+
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your full name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    autoComplete="name"
+                  />
+
+                </div>
+
               </div>
 
-              {/* Email */}
+              {/* =================================================
+                  EMAIL
+              ================================================== */}
+
               <div className="register-form-group">
+
                 <label htmlFor="email">
                   Email Address
                 </label>
 
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
+                <div className="register-input-wrapper">
+
+                  <span className="register-input-icon">
+                    ✉
+                  </span>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    autoComplete="email"
+                  />
+
+                </div>
+
               </div>
 
-              {/* Phone */}
+              {/* =================================================
+                  PHONE
+              ================================================== */}
+
               <div className="register-form-group">
+
                 <label htmlFor="phone">
                   Phone Number
                 </label>
 
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="Enter your phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
+                <div className="register-input-wrapper">
+
+                  <span className="register-input-icon">
+                    ☎
+                  </span>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    autoComplete="tel"
+                  />
+
+                </div>
+
               </div>
 
-              {/* Role */}
+              {/* =================================================
+                  ACCOUNT TYPE
+              ================================================== */}
+
               <div className="register-form-group">
+
                 <label htmlFor="role">
                   Account Type
                 </label>
 
-                <select
-                  id="role"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleChange}
-                >
-                  <option value="">
-                    Select account type
-                  </option>
+                <div className="register-input-wrapper">
 
-                  <option value="business">
-                    Business
-                  </option>
+                  <span className="register-input-icon">
+                    ◉
+                  </span>
 
-                  <option value="recipient">
-                    Recipient
-                  </option>
-                </select>
+                  <select
+                    id="role"
+                    name="role"
+                    value={formData.role}
+                    onChange={handleChange}
+                  >
+
+                    <option value="">
+                      Select account type
+                    </option>
+
+                    <option value="business">
+                      Business
+                    </option>
+
+                    <option value="recipient">
+                      Recipient
+                    </option>
+
+                  </select>
+
+                </div>
+
               </div>
 
-              {/* Location */}
+              {/* =================================================
+                  LOCATION
+              ================================================== */}
+
               <div className="register-form-group">
+
                 <label htmlFor="location">
                   Location
                 </label>
 
-                <input
-                  id="location"
-                  name="location"
-                  type="text"
-                  placeholder="e.g. Polonnaruwa"
-                  value={formData.location}
-                  onChange={handleChange}
-                />
+                <div className="register-input-wrapper">
+
+                  <span className="register-input-icon">
+                    📍
+                  </span>
+
+                  <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    placeholder="e.g. Polonnaruwa"
+                    value={formData.location}
+                    onChange={handleChange}
+                    autoComplete="address-level2"
+                  />
+
+                </div>
+
               </div>
 
-              {/* Password */}
+              {/* =================================================
+                  PASSWORD
+              ================================================== */}
+
               <div className="register-form-group">
+
                 <label htmlFor="password">
                   Password
                 </label>
 
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="Create a password"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
+                <div className="register-input-wrapper">
+
+                  <span className="register-input-icon">
+                    🔒
+                  </span>
+
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Create a password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    autoComplete="new-password"
+                  />
+
+                </div>
+
+                <small className="register-password-hint">
+                  Minimum 6 characters
+                </small>
+
               </div>
 
-              {/* Confirm Password */}
+              {/* =================================================
+                  CONFIRM PASSWORD
+              ================================================== */}
+
               <div className="register-form-group">
+
                 <label htmlFor="confirmPassword">
                   Confirm Password
                 </label>
 
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  placeholder="Confirm your password"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                />
+                <div className="register-input-wrapper">
+
+                  <span className="register-input-icon">
+                    🔒
+                  </span>
+
+                  <input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type="password"
+                    placeholder="Confirm your password"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    autoComplete="new-password"
+                  />
+
+                </div>
+
               </div>
 
-              {/* Submit */}
+              {/* =================================================
+                  SUBMIT
+              ================================================== */}
+
               <button
                 type="submit"
                 className="register-submit-btn"
                 disabled={loading}
               >
-                {loading
-                  ? "Creating Account..."
-                  : "Create Account"}
+
+                {loading ? (
+                  <>
+                    <span className="register-spinner"></span>
+                    Creating account...
+                  </>
+                ) : (
+                  <>
+                    Create Account
+                    <span className="register-button-arrow">
+                      →
+                    </span>
+                  </>
+                )}
+
               </button>
 
             </form>
 
+            {/* Login */}
             <div className="register-login">
 
               <p>
-                Already have an account?{" "}
+                Already have an account?
                 <Link to="/login">
                   Sign In
                 </Link>
+              </p>
+
+            </div>
+
+            {/* Footer */}
+            <div className="register-footer">
+
+              <span>🌱</span>
+
+              <p>
+                Together, we can save more food.
               </p>
 
             </div>

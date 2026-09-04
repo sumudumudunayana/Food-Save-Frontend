@@ -34,28 +34,24 @@ const Navbar = () => {
           </Link>
 
           {/* Business Navigation */}
-          {user &&
-            (user.role === "business" ||
-              user.role === "admin") && (
-              <>
-                <Link to="/business/add-food">
-                  Add Food
-                </Link>
+          {user && (user.role === "business" || user.role === "admin") && (
+            <>
+              <Link to="/business/add-food">
+                Add Food
+              </Link>
 
-                <Link to="/business/requests">
-                  Requests
-                </Link>
-              </>
-            )}
+              <Link to="/business/requests">
+                Requests
+              </Link>
+            </>
+          )}
 
           {/* Recipient Navigation */}
-          {user &&
-            (user.role === "recipient" ||
-              user.role === "admin") && (
-              <Link to="/recipient/requests">
-                My Requests
-              </Link>
-            )}
+          {user && user.role === "recipient" && (
+            <Link to="/recipient/requests">
+              My Requests
+            </Link>
+          )}
 
           <Link to="/about">
             About

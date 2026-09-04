@@ -1,230 +1,981 @@
+/* =========================================================
+   FOOD SAVE - MODERN REGISTER
+   ========================================================= */
+
 .register-page {
   min-height: calc(100vh - 80px);
-  background: #f8faf8;
+  background: #f4f7f4;
+  color: #17251a;
+  overflow: hidden;
 }
 
 .register-container {
   min-height: calc(100vh - 80px);
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
 }
 
-/* Left Side */
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
 
 .register-intro {
-  background: #2f7d32;
-  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px;
+
+  padding: 60px 70px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #1d6b35 0%,
+      #287c3d 48%,
+      #185c30 100%
+    );
 }
 
 .register-intro-content {
-  max-width: 500px;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 560px;
+
+  animation: registerFadeUp 0.7s ease forwards;
+}
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+   ========================================================= */
+
+.register-bg-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.register-circle-one {
+  width: 430px;
+  height: 430px;
+
+  right: -190px;
+  top: -180px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 0 0 45px rgba(255, 255, 255, 0.025),
+    0 0 0 90px rgba(255, 255, 255, 0.02);
+}
+
+.register-circle-two {
+  width: 310px;
+  height: 310px;
+
+  left: -180px;
+  bottom: -160px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.register-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 55px;
 }
 
 .register-logo {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 14px;
+  width: 62px;
+  height: 62px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  margin-bottom: 25px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.13);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  font-size: 29px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(10px);
 }
 
-.register-intro h1 {
-  font-size: 46px;
-  margin-bottom: 15px;
+.register-brand-small {
+  display: block;
+
+  margin-bottom: 2px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  opacity: 0.65;
 }
 
-.register-intro h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.register-brand h1 {
+  margin: 0;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
 }
 
-.register-intro-content > p {
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.9;
-  margin-bottom: 35px;
+/* =========================================================
+   INTRO HEADING
+   ========================================================= */
+
+.register-intro-heading {
+  max-width: 520px;
 }
+
+.register-intro-label {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.register-intro-heading h2 {
+  margin: 0 0 22px;
+
+  font-size: clamp(40px, 3.8vw, 58px);
+
+  line-height: 1.06;
+
+  letter-spacing: -2.3px;
+
+  font-weight: 800;
+}
+
+.register-intro-heading h2 span {
+  color: #c9f3cf;
+}
+
+.register-intro-heading > p {
+  max-width: 480px;
+
+  margin: 0 0 35px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
 
 .register-benefits {
   display: flex;
   flex-direction: column;
+
   gap: 16px;
 }
 
-.register-benefits div {
+.register-benefit-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+
+  gap: 15px;
 }
 
-.register-benefits span {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+.register-benefit-icon {
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  font-size: 14px;
+  font-weight: 800;
 }
 
-.register-benefits p {
+.register-benefit-item strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.register-benefit-item p {
   margin: 0;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 11px;
 }
 
-/* Right Side */
+/* =========================================================
+   IMPACT
+   ========================================================= */
+
+.register-impact {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 40px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 10px;
+}
+
+.register-impact-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #a9e8b3;
+
+  box-shadow:
+    0 0 12px rgba(169, 232, 179, 0.7);
+}
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
 
 .register-form-section {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 30px;
+
+  padding: 35px 35px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(47, 125, 50, 0.07),
+      transparent 25%
+    ),
+    #f7f9f7;
 }
+
+/* =========================================================
+   REGISTER CARD
+   ========================================================= */
 
 .register-card {
   width: 100%;
   max-width: 480px;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  padding: 38px 42px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #e5ebe5;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 60px rgba(31, 58, 37, 0.08),
+    0 3px 12px rgba(31, 58, 37, 0.04);
+
+  animation: registerFadeUp 0.7s ease 0.1s both;
 }
 
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .register-header {
-  text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
+}
+
+.register-form-label {
+  display: inline-block;
+
+  margin-bottom: 9px;
+
+  color: #2f7d32;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
 }
 
 .register-header h2 {
-  font-size: 30px;
-  color: #1f2937;
-  margin-bottom: 8px;
+  margin: 0 0 7px;
+
+  color: #17251a;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  letter-spacing: -1px;
+
+  font-weight: 800;
 }
 
 .register-header p {
-  color: #6b7280;
+  margin: 0;
+
+  color: #7b857d;
+
+  font-size: 13px;
+
+  line-height: 1.6;
 }
 
-/* Form */
+/* =========================================================
+   FORM
+   ========================================================= */
 
 .register-form-group {
-  margin-bottom: 17px;
+  margin-bottom: 14px;
 }
 
 .register-form-group label {
   display: block;
-  margin-bottom: 7px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #374151;
+
+  margin-bottom: 6px;
+
+  color: #354239;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   INPUT WRAPPER
+   ========================================================= */
+
+.register-input-wrapper {
+  position: relative;
+}
+
+.register-input-icon {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #89938b;
+
+  font-size: 13px;
+
+  pointer-events: none;
+
+  transition: color 0.2s ease;
 }
 
 .register-form-group input,
 .register-form-group select {
+  box-sizing: border-box;
+
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
+  height: 43px;
+
+  padding: 0 14px 0 40px;
+
+  border: 1px solid #dce3dc;
+
+  border-radius: 10px;
+
   outline: none;
-  color: #1f2937;
-  background: #ffffff;
+
+  background: #fbfcfb;
+
+  color: #17251a;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.register-form-group input::placeholder {
+  color: #a5ada7;
+}
+
+.register-form-group input:hover,
+.register-form-group select:hover {
+  border-color: #c8d3c9;
 }
 
 .register-form-group input:focus,
 .register-form-group select:focus {
   border-color: #2f7d32;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px rgba(47, 125, 50, 0.09);
 }
+
+.register-input-wrapper:focus-within
+.register-input-icon {
+  color: #2f7d32;
+}
+
+/* Select */
+
+.register-form-group select {
+  appearance: none;
+
+  cursor: pointer;
+}
+
+.register-form-group select:invalid {
+  color: #a5ada7;
+}
+
+/* =========================================================
+   PASSWORD HINT
+   ========================================================= */
+
+.register-password-hint {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #9aa39d;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   ERROR & SUCCESS
+   ========================================================= */
 
 .register-error,
 .register-success {
-  padding: 12px 14px;
-  margin-bottom: 18px;
-  border-radius: 8px;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 15px;
+
+  padding: 10px 12px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+
+  line-height: 1.5;
 }
 
 .register-error {
-  background: #fee2e2;
-  color: #b91c1c;
+  border: 1px solid #f3caca;
+
+  background: #fff5f5;
+
+  color: #b42318;
 }
 
 .register-success {
-  background: #dcfce7;
-  color: #166534;
+  border: 1px solid #b9e5c2;
+
+  background: #f1fbf3;
+
+  color: #217a35;
 }
+
+.register-error-icon,
+.register-success-icon {
+  flex-shrink: 0;
+
+  width: 19px;
+  height: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.register-error-icon {
+  background: #f8d7d7;
+}
+
+.register-success-icon {
+  background: #d8f1dd;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
 
 .register-submit-btn {
   width: 100%;
-  padding: 14px;
+  height: 47px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 7px;
+
   border: none;
-  border-radius: 8px;
-  background: #2f7d32;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #2f7d32,
+    #246b2b
+  );
+
   color: #ffffff;
-  font-weight: 700;
-  font-size: 15px;
-  margin-top: 5px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 18px rgba(47, 125, 50, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .register-submit-btn:hover {
-  opacity: 0.9;
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 25px rgba(47, 125, 50, 0.27);
+}
+
+.register-submit-btn:active {
+  transform: translateY(0);
 }
 
 .register-submit-btn:disabled {
-  opacity: 0.6;
+  opacity: 0.65;
+
   cursor: not-allowed;
+
+  transform: none;
 }
 
-/* Login Link */
+.register-button-arrow {
+  font-size: 17px;
+
+  line-height: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.register-submit-btn:hover
+.register-button-arrow {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   SPINNER
+   ========================================================= */
+
+.register-spinner {
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: registerSpin 0.7s linear infinite;
+}
+
+/* =========================================================
+   LOGIN LINK
+   ========================================================= */
 
 .register-login {
+  margin-top: 21px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #edf0ed;
+
   text-align: center;
-  margin-top: 22px;
-  padding-top: 20px;
-  border-top: 1px solid #e5e7eb;
 }
 
 .register-login p {
-  color: #6b7280;
-  font-size: 14px;
+  margin: 0;
+
+  color: #7c857e;
+
+  font-size: 11px;
 }
 
 .register-login a {
+  margin-left: 5px;
+
   color: #2f7d32;
-  font-weight: 600;
+
+  font-weight: 750;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
 }
 
-/* Responsive */
+.register-login a:hover {
+  color: #1e5d25;
 
-@media (max-width: 800px) {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.register-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 19px;
+
+  color: #a0a8a1;
+}
+
+.register-footer span {
+  font-size: 11px;
+}
+
+.register-footer p {
+  margin: 0;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   MOBILE BRAND
+   ========================================================= */
+
+.register-mobile-brand {
+  display: none;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes registerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes registerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
   .register-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .register-intro {
-    padding: 45px 25px;
+    padding: 45px;
   }
 
-  .register-intro h1 {
-    font-size: 38px;
-  }
-
-  .register-intro h2 {
-    font-size: 24px;
-  }
-
-  .register-form-section {
-    padding: 35px 15px;
+  .register-intro-heading h2 {
+    font-size: 44px;
   }
 
   .register-card {
-    padding: 30px 25px;
+    padding: 35px 30px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .register-page {
+    min-height: 100vh;
+  }
+
+  .register-container {
+    min-height: 100vh;
+
+    display: block;
+  }
+
+  .register-intro {
+    min-height: auto;
+
+    padding: 38px 25px 42px;
+  }
+
+  .register-intro-content {
+    max-width: 600px;
+  }
+
+  .register-brand {
+    margin-bottom: 38px;
+  }
+
+  .register-intro-heading h2 {
+    font-size: 39px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .register-intro-heading > p {
+    font-size: 13px;
+
+    margin-bottom: 28px;
+  }
+
+  .register-benefits {
+    gap: 13px;
+  }
+
+  .register-benefit-item p {
+    display: none;
+  }
+
+  .register-impact {
+    margin-top: 30px;
+  }
+
+  .register-form-section {
+    padding: 32px 18px 45px;
+
+    background: #f7f9f7;
+  }
+
+  .register-card {
+    max-width: 500px;
+
+    padding: 34px 25px;
+
+    border-radius: 18px;
+  }
+
+  .register-mobile-brand {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 28px;
+
+    color: #1d5f2b;
+
+    font-size: 20px;
+
+    font-weight: 800;
+  }
+
+  .register-mobile-logo {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #e8f4e9;
+
+    font-size: 19px;
+  }
+
+  .register-header {
+    text-align: center;
+  }
+
+  .register-header h2 {
+    font-size: 26px;
+  }
+
+  .register-form-group input,
+  .register-form-group select {
+    height: 47px;
+
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .register-intro {
+    padding: 30px 20px 36px;
+  }
+
+  .register-logo {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 15px;
+
+    font-size: 24px;
+  }
+
+  .register-brand {
+    gap: 12px;
+
+    margin-bottom: 32px;
+  }
+
+  .register-brand h1 {
+    font-size: 23px;
+  }
+
+  .register-intro-heading h2 {
+    font-size: 34px;
+  }
+
+  .register-intro-heading > p {
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+  .register-form-section {
+    padding: 25px 14px 35px;
+  }
+
+  .register-card {
+    padding: 30px 20px;
+  }
+
+  .register-header h2 {
+    font-size: 25px;
+  }
+
+  .register-form-group {
+    margin-bottom: 15px;
+  }
+
+  .register-form-group input,
+  .register-form-group select {
+    height: 47px;
+  }
+
+  .register-submit-btn {
+    height: 49px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .register-intro-content,
+  .register-card,
+  .register-spinner {
+    animation: none;
+  }
+
+  .register-submit-btn,
+  .register-button-arrow,
+  .register-form-group input,
+  .register-form-group select {
+    transition: none;
   }
 }
